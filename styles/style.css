@@ -33,12 +33,18 @@ body {
     width: 20rem;
     margin: 10vh auto;
     box-shadow: 0 0 20px var(--cyan-shadow);
+    display: grid;
+    grid-template-areas: 
+        "top"
+        "middle"
+        "bottom";
 }
 
 .top {
     background-color: var(--white);
     padding: 2rem;
     border-radius: 8px 8px 0 0;
+    grid-area: top;
 }
 .top h1 {
     color: var(--cyan);
@@ -58,6 +64,7 @@ body {
     background-color: var(--cyan);
     padding: 2rem;
     color: var(--white);
+    grid-area: middle;
 }
 .dollar-amt {
     font-size: 2rem;
@@ -93,6 +100,7 @@ body {
     padding: 2rem;
     color: var(--white);
     border-radius: 0 0 8px 8px;
+    grid-area: bottom;
 }
 .bottom h2 {
     font-size: 1.2rem;
@@ -112,7 +120,7 @@ body {
 }
 
 /* @media query for desktop version */
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 400px) {
     .container {
         width: fit-content;
         display: grid;
@@ -122,15 +130,10 @@ body {
         grid-template-columns: 20rem 20rem;
         margin: 8vh auto;
     }
-    .top {
-        grid-area: top;
-    }
     .middle {
-        grid-area: middle;
         border-radius: 0 0 0 8px;
     }
     .bottom {
-        grid-area: bottom;
         border-radius: 0 0 8px 0;
     }
 }
