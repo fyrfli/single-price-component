@@ -23,7 +23,6 @@ html {
     font-size: 16px;
 }
 body {
-    /* margin: 2rem auto; */
     background-color: var(--light-grey);
     line-height: 1.6rem;
 }
@@ -32,7 +31,7 @@ body {
 /* main */
 .container {
     width: 20rem;
-    margin: 12vh auto;
+    margin: 10vh auto;
     box-shadow: 0 0 20px var(--cyan-shadow);
 }
 
@@ -44,14 +43,14 @@ body {
 .top h1 {
     color: var(--cyan);
     font-size: 1.8rem;
-    margin-bottom: 1.2rem;
+    padding-bottom: 1.2rem;
 }
 .top h2 {
     color: var(--bright-yellow);
     font-size: 1rem;
 }
 .top p {
-    margin-top: 2rem;
+    padding-top: 1rem;
     color: var(--greyish-blue);
 }
 
@@ -110,4 +109,28 @@ body {
 }
 .attribution a { 
     color: hsl(228, 45%, 44%); 
+}
+
+/* @media query for desktop version */
+@media screen and (min-width: 300px) {
+    .container {
+        width: fit-content;
+        display: grid;
+        grid-template-areas: 
+            "top top"
+            "middle bottom";
+        grid-template-columns: 20rem 20rem;
+        margin: 8vh auto;
+    }
+    .top {
+        grid-area: top;
+    }
+    .middle {
+        grid-area: middle;
+        border-radius: 0 0 0 8px;
+    }
+    .bottom {
+        grid-area: bottom;
+        border-radius: 0 0 8px 0;
+    }
 }
